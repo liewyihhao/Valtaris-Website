@@ -1,6 +1,5 @@
-import { workforceCategories, stats } from "@/lib/content";
+import { workforceCategories } from "@/lib/content";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Stat } from "@/components/ui/Stat";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Workforce() {
@@ -32,16 +31,19 @@ export function Workforce() {
           })}
         </div>
 
-        <Reveal>
-          <div className="mt-12 grid grid-cols-2 gap-8 rounded-2xl border border-line bg-surface/40 p-8 lg:grid-cols-4">
-            {stats.map((s) => (
-              <Stat key={s.label} value={s.value} label={s.label} placeholder={s.placeholder} />
-            ))}
-          </div>
-        </Reveal>
-        <p className="mt-3 text-xs text-ink-faint">
-          Figures marked TBD are placeholders — replace with verified numbers before launch.
-        </p>
+        {/*
+          Stats block hidden until verified figures exist. To re-enable:
+          1. re-add `stats` + `Stat` imports at the top of this file, and
+          2. restore the block below, filling real numbers in `stats` (lib/content.ts).
+
+          <Reveal>
+            <div className="mt-12 grid grid-cols-2 gap-8 rounded-2xl border border-line bg-surface/40 p-8 lg:grid-cols-4">
+              {stats.map((s) => (
+                <Stat key={s.label} value={s.value} label={s.label} placeholder={s.placeholder} />
+              ))}
+            </div>
+          </Reveal>
+        */}
       </div>
     </section>
   );

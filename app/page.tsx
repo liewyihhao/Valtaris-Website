@@ -7,7 +7,7 @@ import { Workflow } from "@/components/home/Workflow";
 import { Quality } from "@/components/home/Quality";
 import { Workforce } from "@/components/home/Workforce";
 import { SoutheastAsia } from "@/components/home/SoutheastAsia";
-import { CaseStudies } from "@/components/home/CaseStudies";
+// import { CaseStudies } from "@/components/home/CaseStudies"; // hidden until real case studies exist
 import { TrustSection } from "@/components/home/TrustSection";
 import { CTASection } from "@/components/home/CTASection";
 
@@ -23,7 +23,7 @@ export default function HomePage() {
       <Quality />
       <Workforce />
       <SoutheastAsia />
-      <CaseStudies />
+      {/* <CaseStudies /> — re-enable once real, verifiable case studies exist */}
       <TrustSection />
       <CTASection />
     </>
