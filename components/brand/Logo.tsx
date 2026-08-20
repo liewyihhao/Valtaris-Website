@@ -1,43 +1,61 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Valtaris mark: an abstract "V" built from two converging data paths
- * meeting at a single validated node — human + AI converging on signal.
+ * Valtaris brand red — the triangle accent inside the wordmark's "A"s.
+ * (Sampled from the supplied logo.)
+ */
+export const BRAND_RED = "#D11F2C";
+
+/**
+ * Compact mark: the signature geometric "A" from VALTARIS with the red
+ * triangle accent. Strokes use currentColor so the mark stays legible on
+ * any background (white on the dark theme).
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 32 32"
+      viewBox="0 0 24 24"
       fill="none"
-      className={cn("h-7 w-7", className)}
+      className={cn("h-7 w-7 text-ink", className)}
       aria-hidden
     >
+      {/* A — two clean angled strokes */}
       <path
-        d="M5 6 L16 24 L27 6"
-        stroke="url(#vg)"
+        d="M4.5 20.5 L12 3.5 L19.5 20.5"
+        stroke="currentColor"
         strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="5" cy="6" r="2.4" fill="#5EE0C1" />
-      <circle cx="27" cy="6" r="2.4" fill="#7C9CFF" />
-      <circle cx="16" cy="24" r="2.8" fill="#F4F6FA" />
-      <defs>
-        <linearGradient id="vg" x1="5" y1="6" x2="27" y2="24" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#5EE0C1" />
-          <stop offset="1" stopColor="#7C9CFF" />
-        </linearGradient>
-      </defs>
+      {/* red triangle accent */}
+      <path d="M12 10.5 L15.5 17 L8.5 17 Z" fill={BRAND_RED} />
     </svg>
   );
 }
 
-export function Logo({ className }: { className?: string }) {
+/**
+ * Full lockup: mark + VALTARIS wordmark set in the site font (Montserrat),
+ * all-caps and tracked to echo the supplied logo. Optional tagline.
+ */
+export function Logo({
+  className,
+  tagline = false,
+}: {
+  className?: string;
+  tagline?: boolean;
+}) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <LogoMark />
-      <span className="text-[17px] font-semibold tracking-tight text-ink">
-        Valtaris
+      <LogoMark className="h-6 w-6" />
+      <span className="flex flex-col leading-none">
+        <span className="text-[17px] font-bold uppercase tracking-[0.16em] text-ink">
+          Valtaris
+        </span>
+        {tagline && (
+          <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.28em] text-ink-muted">
+            Making AI Smarter
+          </span>
+        )}
       </span>
     </span>
   );

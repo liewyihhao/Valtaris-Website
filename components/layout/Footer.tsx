@@ -32,7 +32,7 @@ export function Footer() {
       <div className="container-page py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div className="max-w-xs">
-            <Logo />
+            <Logo tagline />
             <p className="mt-4 text-sm leading-relaxed text-ink-muted">
               The human-data layer for reliable AI. We design and operate the
               collection, annotation and evaluation your models need.
