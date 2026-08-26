@@ -24,6 +24,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# local dev fallback for applications (never commit applicant data)
+/_applications
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts.timestamp
