@@ -52,7 +52,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          <Link href="/contact" className="btn-primary px-4 py-2 text-sm">
+          <Link href="/get-started" className="btn-primary px-4 py-2 text-sm">
             Get Started
           </Link>
         </div>
@@ -82,7 +82,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/get-started"
               onClick={() => setOpen(false)}
               className="btn-primary mt-2 w-full py-3"
             >

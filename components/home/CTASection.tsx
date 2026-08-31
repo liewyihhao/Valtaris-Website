@@ -19,10 +19,10 @@ export function CTASection() {
                 approach.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <ButtonLink href="/contact" variant="primary" withArrow>
+                <ButtonLink href="/get-started" variant="primary" withArrow>
                   Start a Data Project
                 </ButtonLink>
-                <ButtonLink href="/contact" variant="secondary">
+                <ButtonLink href="/get-started" variant="secondary">
                   Talk to Our Team
                 </ButtonLink>
               </div>

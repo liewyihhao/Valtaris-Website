@@ -13,40 +13,40 @@ export function Hero() {
           <Reveal>
             <span className="eyebrow">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-              Human intelligence powering better AI
+              Making AI Smarter
             </span>
           </Reveal>
 
           <Reveal delay={0.05}>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="text-gradient">Human Intelligence</span>
+              <span className="text-gradient">The human-data layer</span>
               <br />
-              for the AI Era
+              for reliable AI
             </h1>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-              High-quality human data, expert evaluation, and scalable
-              annotation infrastructure for companies building the world&apos;s
-              next generation of AI.
+              Every model is only as good as the humans who taught it. Valtaris runs the full pipeline
+              between raw data and a model you can trust — sourcing, labeling, and evaluating across
+              vision, language, audio, and generative AI, with quality control built in at every stage.
             </p>
           </Reveal>
 
           <Reveal delay={0.15}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <ButtonLink href="/contact" variant="primary" withArrow>
-                Discuss Your Project
+              <ButtonLink href="/get-started" variant="primary" withArrow>
+                Talk to our team
               </ButtonLink>
               <ButtonLink href="/services" variant="secondary">
-                Explore Our Capabilities
+                Explore our services
               </ButtonLink>
             </div>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="mt-8 font-mono text-xs uppercase tracking-[0.14em] text-ink-faint">
-              For AI teams, robotics, autonomous systems &amp; research
+              A Southeast Asian data network · working with teams worldwide
             </p>
           </Reveal>
         </div>

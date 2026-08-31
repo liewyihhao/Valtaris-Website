@@ -1,42 +1,25 @@
 import type { Metadata } from "next";
-import { industries } from "@/lib/content";
-import { PageHeader } from "@/components/ui/PageHeader";
-import { IndustryCard } from "@/components/cards/IndustryCard";
+import { industries } from "@/lib/seo";
+import { SeoHub, HubCta } from "@/components/seo/SeoHub";
 import { CTASection } from "@/components/home/CTASection";
-import { Reveal } from "@/components/ui/Reveal";
-import { ButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Industries",
+  title: { absolute: "AI Training Data by Industry | Valtaris" },
   description:
-    "AI data for generative AI, robotics, autonomous vehicles, healthcare AI, fintech, retail, e-commerce, search and recommendation, enterprise AI and computer vision.",
+    "Data and evaluation built around your sector's realities — generative AI, robotics, autonomous vehicles, healthcare, fintech and retail.",
+  alternates: { canonical: "/industries" },
 };
 
 export default function IndustriesPage() {
   return (
     <>
-      <PageHeader
+      <SeoHub
         eyebrow="Industries"
-        title="One data challenge per industry — one solution each"
-        description="We map every field to the specific AI problem it faces and the data that solves it."
-      >
-        <ButtonLink href="/contact" variant="primary" withArrow>
-          Discuss Your Project
-        </ButtonLink>
-      </PageHeader>
-
-      <section className="py-16">
-        <div className="container-page">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry, i) => (
-              <Reveal key={industry.slug} delay={(i % 3) * 0.05}>
-                <IndustryCard industry={industry} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
+        title="We understand your sector's data reality"
+        description="Every industry has its own data, quality bar and compliance demands — here's how we meet them."
+        pages={industries}
+        cta={<HubCta />}
+      />
       <CTASection />
     </>
   );

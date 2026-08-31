@@ -1,27 +1,28 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
-import { services, industries, solutions, site } from "@/lib/content";
+import { site } from "@/lib/content";
+import { services, solutions, industries } from "@/lib/seo";
 
 const columns = [
   {
     heading: "Services",
-    links: services.slice(0, 6).map((s) => ({ label: s.title, href: "/services" })),
+    links: services.map((s) => ({ label: s.name, href: `/services/${s.slug}` })),
   },
   {
     heading: "Solutions",
-    links: solutions.slice(0, 6).map((s) => ({ label: s.title, href: "/solutions" })),
+    links: solutions.map((s) => ({ label: s.name, href: `/solutions/${s.slug}` })),
   },
   {
     heading: "Industries",
-    links: industries.slice(0, 6).map((i) => ({ label: i.name, href: "/industries" })),
+    links: industries.map((i) => ({ label: i.name, href: `/industries/${i.slug}` })),
   },
   {
     heading: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "How It Works", href: "/#workflow" },
-      { label: "Quality", href: "/#quality" },
-      { label: "Get Started", href: "/contact" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Quality", href: "/quality" },
+      { label: "Get Started", href: "/get-started" },
     ],
   },
 ];

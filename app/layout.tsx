@@ -17,40 +17,43 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+const HOME_TITLE = "Valtaris | Human Data for Reliable AI — Annotation & Evaluation";
+const HOME_DESCRIPTION =
+  "Valtaris designs and operates the data collection, annotation, and evaluation pipelines behind reliable AI models. Talk to our team about your dataset.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: HOME_TITLE,
     template: `%s — ${site.name}`,
   },
-  description: site.description,
+  description: HOME_DESCRIPTION,
   keywords: [
-    "AI data services",
-    "data annotation",
-    "AI data labelling",
+    "data annotation company",
+    "human data layer for AI",
+    "AI training data services",
+    "data labeling and evaluation",
     "LLM evaluation",
     "AI model evaluation",
     "computer vision annotation",
-    "AI training data",
-    "human evaluation",
     "multilingual AI data",
     "Southeast Asia AI data",
-    "RLHF data",
-    "human preference data",
+    "RLHF human preference data",
   ],
   authors: [{ name: site.name }],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
-    description: site.description,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     url: site.url,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
-    description: site.description,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
@@ -59,7 +62,9 @@ const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: site.name,
-  description: site.description,
+  slogan: site.tagline,
+  description:
+    "The human-data layer for reliable AI. Valtaris designs and operates the collection, annotation and evaluation your models need, from a Southeast Asian data network serving teams worldwide.",
   url: site.url,
   email: site.email,
   address: {
@@ -67,13 +72,14 @@ const orgSchema = {
     addressLocality: "Kuala Lumpur",
     addressCountry: "MY",
   },
-  areaServed: "Worldwide",
+  areaServed: ["Southeast Asia", "Worldwide"],
   knowsAbout: [
     "AI training data",
     "Data annotation",
     "LLM evaluation",
     "Human preference data",
     "Computer vision annotation",
+    "Multilingual AI data",
   ],
 };
 
