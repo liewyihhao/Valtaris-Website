@@ -31,7 +31,7 @@ import {
 export const site = {
   name: "Valtaris",
   legalName: "Valtaris",
-  tagline: "Human Intelligence for the AI Era",
+  tagline: "Making AI Smarter",
   description:
     "Valtaris provides high-quality human data, expert evaluation, and scalable annotation infrastructure for companies building the world's next generation of AI.",
   // Placeholder contact details — replace with real company information.

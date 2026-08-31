@@ -126,17 +126,18 @@ export function MultiStepForm() {
     setError(null);
     setStatus("submitting");
 
-    // NOTE: No backend is wired yet. This simulates a submission so the UX is
-    // complete. Replace with a POST to your CRM / email endpoint or a form
-    // service (e.g. an /api/lead route, Formspree, HubSpot, etc.).
     try {
-      await new Promise((r) => setTimeout(r, 900));
-      // eslint-disable-next-line no-console
-      console.info("[Valtaris] Lead submission payload:", form);
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Submission failed.");
       setStatus("done");
-    } catch {
+    } catch (e) {
       setStatus("idle");
-      setError("Something went wrong. Please try again or email us directly.");
+      setError(e instanceof Error ? e.message : "Something went wrong. Please try again.");
     }
   };
 
@@ -148,11 +149,7 @@ export function MultiStepForm() {
         </div>
         <h2 className="mt-5 text-2xl font-semibold text-ink">Thank you — we&apos;ve got it.</h2>
         <p className="mx-auto mt-3 max-w-md text-sm text-ink-muted">
-          Our data team will review your project and get back to you shortly. For
-          anything urgent, email us directly.
-        </p>
-        <p className="mt-4 font-mono text-xs text-ink-faint">
-          Submission handling is a placeholder — connect a real endpoint before launch.
+          Our data team will review your project and get back to you shortly.
         </p>
       </div>
     );

@@ -28,6 +28,7 @@ yarn-error.log*
 /_applications
 # mock Portal ingest output (test tool)
 /_mock-portal
+/_leads
 
 # typescript
 *.tsbuildinfo
